@@ -10,7 +10,7 @@ describe("test contract functions", () => {
       "hello-world",
       "say-hi",
       [],
-      address1
+      address1,
     );
     expect(sayHiResponse.result).toBeOk(Cl.stringAscii("Hello World"));
   });
@@ -20,9 +20,12 @@ describe("test contract functions", () => {
       "hello-world",
       "echo-number",
       [Cl.int(42)],
-      address1
+      address1,
     );
     expect(echoNumberResponse.result).toBeOk(Cl.int(42));
+    console.log(
+      "echoNumberResponse: " + Cl.prettyPrint(echoNumberResponse.result),
+    );
   });
 
   it("returns ok when check-it is true", () => {
@@ -30,7 +33,7 @@ describe("test contract functions", () => {
       "hello-world",
       "check-it",
       [Cl.bool(true)],
-      address1
+      address1,
     );
     expect(checkItResponseTrue.result).toBeOk(Cl.int(1));
   });
@@ -40,7 +43,7 @@ describe("test contract functions", () => {
       "hello-world",
       "check-it",
       [Cl.bool(false)],
-      address1
+      address1,
     );
     expect(checkItResponseFalse.result).toBeErr(Cl.uint(100));
   });
