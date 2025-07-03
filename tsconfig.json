@@ -4,7 +4,6 @@
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": ["ESNext"],
-    "types": ["node"],
     "skipLibCheck": true,
 
     "moduleResolution": "bundler",
@@ -20,7 +19,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "node_modules/@hirosystems/clarinet-sdk/vitest-helpers/src",
-    "tests"
+    "node_modules/@hirosystems/clarinet-sdk/vitest-helpers/src/",
+    "tests/"
   ]
 }
